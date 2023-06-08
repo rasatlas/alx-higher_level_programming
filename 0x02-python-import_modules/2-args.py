@@ -11,4 +11,4 @@ elif listlen == 1:
 else:
     print("{} arguments:".format(listlen))
 for i in range(listlen):
-    print("{} : {}".format(i + 1, sys.argv[i + 1]))
+    print("{}: {}".format(i + 1, sys.argv[i + 1]))
