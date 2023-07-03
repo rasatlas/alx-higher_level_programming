@@ -66,4 +66,4 @@ class Rectangle:
                 if h != (self.__height - 1):
                     rect.append("\n")
             return ("".join(rect))
-            #return "\n".join(['#' * self.__width] * self.__height)
+# return "\n".join(['#' * self.__width] * self.__height)
