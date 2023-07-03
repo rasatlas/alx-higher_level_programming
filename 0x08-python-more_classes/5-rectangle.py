@@ -15,6 +15,7 @@ class Rectangle:
         self.width = width
 
     def __del__(self):
+        """Prints message for every deletion on instances."""
         print("Bye rectangle...")
 
     @property
