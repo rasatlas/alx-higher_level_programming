@@ -57,9 +57,12 @@ class Rectangle:
         if height or width is 0 print an empty string.
         """
         if self.__height == 0 or self.__width == 0:
-            print("")
+            return("")
         else:
+            rect = []
             for h in range(self.__height):
                 for w in range(self.__width):
-                    print("#", end="")
-                print("")
+                    rect.append("#")
+                    if w == (self.__width - 1):
+                        rect.append("\n")
+            return ("".join(rect))
