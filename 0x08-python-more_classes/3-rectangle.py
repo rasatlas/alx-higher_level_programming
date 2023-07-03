@@ -63,6 +63,6 @@ class Rectangle:
             for h in range(self.__height):
                 for w in range(self.__width):
                     rect.append("#")
-                    if w == (self.__width - 1):
-                        rect.append("\n")
+                if h != (self.__height - 1):
+                    rect.append("\n")
             return ("".join(rect))
