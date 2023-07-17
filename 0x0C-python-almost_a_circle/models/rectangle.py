@@ -128,25 +128,16 @@ class Rectangle(Base):
                                                        self.__height)
 
     def update(self, *args, **kwargs):
-        """Update the Rectangle.
-
-        Args:
-            *args (ints): New attribute values.
-                1st argument represents id attribute
-                2nd argument represents width attribute
-                3rd argument represent height attribute
-                4th argument represents x attribute
-                5th argument represents y attribute
-            **kwargs (dict): New key/value pairs of attributes.
-        """
-
-        lst = (self.id, self.__width, self.__height, self.__x, self.__y)
-        if args:
-            self.id, self.__width, self.__height, self.__x, self.__y = \
-                    args + lst[len(args):len(lst)]
-        elif kwargs:
-            for (key, value) in kwargs.items():
+        """ update method """
+        if args is not None and len(args) > 0:
+            keys = ['id', 'width', 'height', 'x', 'y']
+            for key, value in zip(keys, args):
                 setattr(self, key, value)
+        elif kwargs is not None and len(kwargs) > 0:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+
 
     def to_dictionary(self):
         """Return the dictionary representation of a Rectangle."""
