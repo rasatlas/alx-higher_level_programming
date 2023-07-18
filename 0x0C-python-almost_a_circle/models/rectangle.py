@@ -22,7 +22,7 @@ class Rectangle(Base):
             ValueError: If either of x or y is < 0.
         """
 
-        self.alidator(self, "width", width)
+        self.validator(self, "width", width)
         self.__width = width
         self.validator(self, "height", height)
         self.__height = height
