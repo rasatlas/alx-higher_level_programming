@@ -45,7 +45,7 @@ class Rectangle(Base):
             ValueError: If the value is <= 0 for 'width' or 'height',
             or < 0 for 'x' or 'y'.
         """
-        if value is not None and type(value) is not int:
+        if value is None or type(value) is not int:
             raise TypeError(name + " must be an integer")
         if (key == "width" or key == "height") and value <= 0:
             raise ValueError(key + " must be > 0")
