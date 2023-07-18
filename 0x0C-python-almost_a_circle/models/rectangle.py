@@ -21,7 +21,6 @@ class Rectangle(Base):
             TypeError: If either of x or y is not an int.
             ValueError: If either of x or y is < 0.
         """
-        super().__init__(id)
 
         if type(width) != int:
             raise TypeError("width must be an integer")
@@ -46,6 +45,7 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
+        super().__init__(id)
 
     @property
     def width(self):
