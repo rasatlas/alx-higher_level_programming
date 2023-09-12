@@ -20,7 +20,27 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 - All your files should end with a new line
 - The first line of all your files should be exactly `#!/usr/bin/node`
 - A `README.md` file, at the root of the folder of the project, is mandatory
-- Your code should be semistandard compliant. Rules of Standard + semicolons on top. Also as reference: AirBnB style
+- Your code should be `semistandard` compliant. [`Rules of Standard`](https://stan    dardjs.com/rules.html) + [`semicolons on top`](https://github.com/standard/semistandard). Also as reference: [`AirBnB style`](https://github.com/airbnb/javascript)
 - All your files must be executable
 - The length of your files will be tested using `wc`
 - You are not allowed to use `var`
+
+## More Info
+__Install Node 14__
+
+
+```bash
+$ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+$ sudo apt-get install -y nodejs
+```
+
+__Install semi-standard__<br>
+[Documentation](https://github.com/standard/semistandard)
+
+
+```bash
+$ sudo npm install semistandard --global
+```
+
+
+## Tasks
