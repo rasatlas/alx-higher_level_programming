@@ -68,7 +68,7 @@ session.close()
 - You are not allowed to use `execute` with sqlalchemy
 
 ## More Info
-__Install and activate venv__
+__Install and activate venv__<br>
 To create a Python Virtual Environment, allowing you to install specific dependencies for this python project, we will install venv:
 
 ```bash
