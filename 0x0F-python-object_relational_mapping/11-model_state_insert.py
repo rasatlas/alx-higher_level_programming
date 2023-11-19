@@ -22,9 +22,12 @@ if __name__ == "__main__":
     db_passwd = sys.argv[2]
     db_name = sys.argv[3]
 
+    # connect_args added to avoid warning 'MYSQL_OPT_RECONNECT'
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
                            format(db_user, db_passwd, db_name),
-                           pool_pre_ping=True)
+                           pool_pre_ping=True,
+                           connect_args={"connect_timeout": 10})
+
     Session = sessionmaker(bind=engine)
     session = Session()
 
