@@ -32,7 +32,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     query_result = session.query(State).\
-            filter(State.name.ilike(arg_name)).all()
+        filter(State.name.ilike(arg_name)).all()
     if (query_result):
         for result in query_result:
             print(result.id)
