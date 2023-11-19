@@ -28,3 +28,4 @@ if __name__ == "__main__":
         order_by(State.id).all()
     for result in query_result:
         print("{}: {}".format(result.id, result.name))
+    session.close()
