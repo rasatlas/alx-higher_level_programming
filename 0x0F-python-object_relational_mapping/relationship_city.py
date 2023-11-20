@@ -9,7 +9,7 @@ from relationship_state import Base, State
 
 class City(Base):
     """
-     class definition of a City
+     class definition of a City that inheriths from Base.
     """
     __tablename__ = 'cities'
     id = Column(Integer, nullable=False, primary_key=True, autoincrement=True)
