@@ -23,5 +23,3 @@ if __name__ == "__main__":
             print(response)
     except urllib.error.HTTPError as e:
         print('Error code: ', e.code)
-    except urllib.error.urlerror as e:
-        print('Error code: ', e.code)
