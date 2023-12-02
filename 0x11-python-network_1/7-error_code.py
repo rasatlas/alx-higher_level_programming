@@ -14,6 +14,7 @@ import sys
 import requests
 
 if __name__ == "__main__":
+    url = sys.argv[1]
     response = requests.get(url)
     status_code = response.status_code
     if status_code >= 400:
