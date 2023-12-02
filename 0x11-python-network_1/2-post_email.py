@@ -25,6 +25,6 @@ if __name__ == "__main__":
     request = urllib.request.Request(url, data=data, method='POST')
 
     # Send the request and get the response
-    with urllib.request.urlopen(req) as r:
+    with urllib.request.urlopen(request) as r:
         response = r.read().decode('utf-8')
         print(response)
