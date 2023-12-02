@@ -32,7 +32,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - All your files must be executable
 - The length of your files will be tested using `wc`
 - All your modules should have a documentation (`python3 -c 'print(__import__("my_module").__doc__)'`)
-- You must use `get` to access to dictionary value by key (it won’t throw an exception if the key doesn’t exist in the dictionary)
+- You must use [`get`](https://docs.python.org/3.4/library/stdtypes.html#dict.get) to access to dictionary value by key (it won’t throw an exception if the key doesn’t exist in the dictionary)
 - A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
 - Your code should not be executed when imported (by using `if __name__ == "__main__":`)
 
