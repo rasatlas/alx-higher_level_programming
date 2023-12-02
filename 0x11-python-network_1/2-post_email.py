@@ -18,9 +18,13 @@ import urllib.request
 if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
-    data_to_encode = urllib.parse.urlencode({'email': email})
-    encoded_data = data_to_encode.encode('utf-8')
-    request = urllib.request.Request(url, data=encoded_data, method='POST')
+    data = urllib.parse.urlencode({'email': email})
+    data = data.encode('utf-8')
+
+    # Make the POST request
+    request = urllib.request.Request(url, data=data, method='POST')
+
+    # Send the request and get the response
     with urllib.request.urlopen(req) as r:
         response = r.read().decode('utf-8')
         print(response)
