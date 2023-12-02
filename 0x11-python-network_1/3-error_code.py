@@ -12,8 +12,7 @@ the body of the response (decoded in utf-8).
 
 
 import sys
-import urllib.request
-from urllib.error import URLError, HTTPError
+import urllib.*
 
 if __name__ == "__main__":
     url = sys.argv[1]
