@@ -14,9 +14,10 @@ import sys
 import requests
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-    response = requests.get(url)
-    if response.status_code >= 400:
-        print("Error code: {}".format(response.status_code))
-    else:
-        print(response.text)
+    try:
+        response = requests.get(url)
+        status_code = response.status_code
+        if status_code >= 400:
+            print(f"Error code: {status_code}")
+        else:
+            print(response.text)
