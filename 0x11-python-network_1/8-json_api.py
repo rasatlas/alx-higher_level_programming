@@ -24,12 +24,12 @@ if __name__ == "__main__":
     if len(sys.argv) == 2:
         q = sys.argv[1]
 
-    r = requests.post(url, data={'q': q})
+    response = requests.post(url, data={'q': q})
     try:
-        r.json()
-        print("[{}] {}".format(r.json().get('id'), r.json().get('name')))
-    except requests.exceptions.JSONDecodeError as e:
-        if e.status_code == 204:
-            print("No result")
+        json_data = response.json()
+        if json_data:
+            print("[{}] {}".format(json_data.get('id'), json_data.get('name')))
         else:
-            print("Not a valid JSON")
+            print("No result")
+    except requests.exceptions.JSONDecodeError:
+        print("Not a valid JSON")
