@@ -23,5 +23,4 @@ if __name__ == "__main__":
     b_auth = requests.auth.HTTPBasicAuth(u_name, p_tkn)
 
     response = requests.get(url, auth=b_auth)
-    json_data = response.json()
-    print(json_data['id'])
+    print(response.json().get("id"))
