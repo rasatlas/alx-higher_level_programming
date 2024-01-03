@@ -11,6 +11,8 @@
 
 const request = require('request');
 const url = process.argv[2];
+const characterId = '18'; // Wedge Antilles' character ID
+
 let count = 0;
 
 request(url, (err, response, body) => {
@@ -18,13 +20,16 @@ request(url, (err, response, body) => {
     throw err;
   } else if (response.statusCode === 200) {
     const data = JSON.parse(body);
-    for (let i = 0; i < data.length; i++) {
-      for (let j = 0; j < data.result[i].character.length; j++) {
+    const films = data.results;
+
+    for (let i = 0; i < films.length; i++) {
+      for (let j = 0; j < films[i].characters.length; j++) {
+        const link = films[i].characters[j];
+
         // Splitting the URL string by '/' and selecting the second-to-last element
-        const link = data.result[i].character[j];
         const parts = link.split('/');
         const id = parts[parts.length - 2];
-        if (id === 18) {
+        if (id === characterId) {
           count++;
         }
       }
