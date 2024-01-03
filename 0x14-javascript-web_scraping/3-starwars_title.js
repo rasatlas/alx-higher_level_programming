@@ -17,8 +17,9 @@ request(endPoint, (err, response, body) => {
   if (err) {
     throw err;
   } else if (response.statusCode === 200) {
-      const data = JSON.parse(body);
-      console.log(data.title);
-  } else
-      console.log(response.statusCode)
+    const data = JSON.parse(body);
+    console.log(data.title);
+  } else {
+    console.log(response.statusCode);
+  }
 });
