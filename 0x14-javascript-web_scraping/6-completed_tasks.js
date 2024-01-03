@@ -9,20 +9,24 @@
 
 const request = require('request');
 const url = process.argv[2];
-let counter = 1;
 
 request(url, (err, response, body) => {
   if (err) {
     throw err;
   } else if (response.statusCode === 200) {
     const data = JSON.parse(body);
+    const dictionary = {};
 
     for (let i = 0; i < data.length; i++) {
       if (data[i].completed) {
-        console.log(`'${counter}': ${data[i].id}`);
-        counter++;
+        if (dictionary[data[i].userId] === undefined) {
+          dictionary[data[i].userId] = 1;
+        } else {
+          dictionary[data[i].userId]++;
+        }
       }
     }
+    console.log(dictionary);
   } else {
     console.log(response.statusCode);
   }
